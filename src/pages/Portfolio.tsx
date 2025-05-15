@@ -42,37 +42,70 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center p-4">
-      {portfolioItems.map((item, i) => (
-        <a
-          key={i}
-          href={item.whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full max-w-xs"
-          style={{ textDecoration: "none" }}
-        >
-          <div
-            className="card h-64 relative flex items-center justify-center text-center overflow-hidden cursor-pointer"
-            style={{
-              backgroundImage: `url(${item.imageUrl})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
+    <>
+      {/* Móvil: scroll horizontal */}
+      <div className="block md:hidden w-full overflow-x-auto">
+        <div className="flex space-x-4 p-4 min-w-max">
+          {portfolioItems.map((item, i) => (
+            <a
+              key={i}
+              href={item.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-64 flex-shrink-0"
+              style={{ textDecoration: "none" }}
+            >
+              <div
+                className="card h-64 relative flex items-center justify-center text-center overflow-hidden cursor-pointer"
+                style={{
+                  backgroundImage: `url(${item.imageUrl})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+                <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
+                  <h3 className="text-lg font-bold mb-2 text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-base text-white">{item.description}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+      {/* Desktop: grilla */}
+      <div className="hidden md:grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center p-4">
+        {portfolioItems.map((item, i) => (
+          <a
+            key={i}
+            href={item.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full max-w-xs"
+            style={{ textDecoration: "none" }}
           >
-            {/* Overlay con blur */}
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
-            {/* Contenido */}
-            <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
-              <h3 className="text-lg font-bold mb-2 text-white">
-                {item.title}
-              </h3>
-              <p className="text-base text-white">{item.description}</p>
+            <div
+              className="card h-64 relative flex items-center justify-center text-center overflow-hidden cursor-pointer"
+              style={{
+                backgroundImage: `url(${item.imageUrl})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+              <div className="relative z-10 flex flex-col items-center justify-center h-full px-4">
+                <h3 className="text-lg font-bold mb-2 text-white">
+                  {item.title}
+                </h3>
+                <p className="text-base text-white">{item.description}</p>
+              </div>
             </div>
-          </div>
-        </a>
-      ))}
-    </div>
+          </a>
+        ))}
+      </div>
+    </>
   );
 };
 

@@ -14,7 +14,7 @@ const NaviBar = () => {
     >
       <div className="flex h-full">
         <div className="flex-1 flex items-center justify-center">
-          {/* Columna 1 */}1
+          {/* Columna 1 */}Logo
         </div>
         <div className="flex-1 flex items-center justify-center">
           {/* Columna 2 */}
