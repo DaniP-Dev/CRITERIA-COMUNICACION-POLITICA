@@ -3,6 +3,7 @@ import NaviBar from "@/components/naviBar/NaviBar";
 import HeroSection from "@/pages/heroSection/HeroSection";
 import Portfolio from "@/pages/Portfolio";
 import Contacto from "@/pages/Contacto";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <section id="contacto">
         <Contacto />
       </section>
+      <Footer />
     </>
   );
 }
