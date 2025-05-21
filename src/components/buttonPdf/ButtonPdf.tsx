@@ -5,7 +5,7 @@ const ButtonPdf = () => {
     alert("Botón PDF presionado");
   };
 
-  return <button onClick={handleClick}>Generar PDF</button>;
+  return <button onClick={handleClick}>ES / EN</button>;
 };
 
 export default ButtonPdf;
