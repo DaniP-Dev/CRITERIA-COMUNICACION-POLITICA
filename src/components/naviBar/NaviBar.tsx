@@ -62,7 +62,7 @@ const NaviBar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="w-full  bg-blue-500/50 fixed top-0 left-0 z-50 shadow-2xl">
+    <nav className="w-full  fixed top-0 left-0 z-50 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between shadow-2xl h-[10vh]">
         <div className="text-xl font-bold">Mi Sitio</div>
 
