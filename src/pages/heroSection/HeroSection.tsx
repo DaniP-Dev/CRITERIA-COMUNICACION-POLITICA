@@ -49,7 +49,7 @@ const HeroSection = () => {
   return (
     <div className="bg-gradient-to-b from-red-600 to-red-400 min-h-screen">
       <section className="w-full h-[10vh]" />
-      {/* no modificar*/}
+      {/* no modificar*/} 
       <section className="w-full h-[90vh]">
         <div
           className="flex flex-col items-center justify-center h-full w-full"
