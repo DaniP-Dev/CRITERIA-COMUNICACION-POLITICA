@@ -7,7 +7,7 @@ const Portfolio = () => {
   const portfolioItems: PortfolioItem[] = [
     {
       title: "Social Listening Inteligente",
-      description: "Descubre lo que dicen de ti. ¡Toma el control!",
+      description: "Tendencias que alertan, acciones que aciertan.",
       imageUrl: "imgs/monitoreo-sociales.webp",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Social Listening Inteligente*`
@@ -15,7 +15,7 @@ const Portfolio = () => {
     },
     {
       title: "Estrategia de Contra-Campaña y Contención Digital",
-      description: "Protege tu imagen y responde con eficacia.",
+      description: "Del caos al orden, con palabras que importen.",
       imageUrl: "imgs/monitoreo-sociales.webp",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Estrategia de Contra-Campaña y Contención Digital*`
@@ -23,7 +23,7 @@ const Portfolio = () => {
     },
     {
       title: "Personal Branding Político",
-      description: "Construye una marca personal poderosa y auténtica.",
+      description: "Donde el mapa habla, la estrategia avanza.",
       imageUrl: "imgs/monitoreo-sociales.webp",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Personal Branding Político*`
@@ -31,7 +31,7 @@ const Portfolio = () => {
     },
     {
       title: "Plataforma Política a tu Medida",
-      description: "Diseña y fortalece tu propuesta política.",
+      description: "Las campañas fuertes nacen de grupos preparados.",
       imageUrl: "imgs/monitoreo-sociales.webp",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Plataforma Política a tu Medida*`
@@ -39,7 +39,7 @@ const Portfolio = () => {
     },
     {
       title: "Estrategia Digital y Redes Sociales de Alto Impacto",
-      description: "Haz que tu mensaje llegue más lejos y conecte.",
+      description: "Estrategia digital, poder viral.",
       imageUrl: "imgs/monitoreo-sociales.webp",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Estrategia Digital y Redes Sociales de Alto Impacto*`
@@ -47,7 +47,7 @@ const Portfolio = () => {
     },
     {
       title: "Estudios Demográficos y Análisis Territorial",
-      description: "Conoce a tu audiencia y toma decisiones estratégicas.",
+      description: "Análisis profundo, triunfo rotundo",
       imageUrl: "imgs/monitoreo-sociales.webp",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Estudios Demográficos y Análisis Territorial*`
@@ -55,7 +55,7 @@ const Portfolio = () => {
     },
     {
       title: "Relaciones Estratégicas y Gestión de Medios",
-      description: "Conecta con aliados clave y potencia tu visibilidad.",
+      description: "En la prensa y la red, mando firme y sed.",
       imageUrl: "imgs/monitoreo-sociales.webp",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Relaciones Estratégicas y Gestión de Medios*`
@@ -63,20 +63,49 @@ const Portfolio = () => {
     },
   ];
 
+  // 🔹 Función para agrupar por filas de 3
+  const chunkArray: (
+    arr: PortfolioItem[],
+    size: number
+  ) => PortfolioItem[][] = (arr, size) => {
+    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+      arr.slice(i * size, i * size + size)
+    );
+  };
+
+  const filas = chunkArray(portfolioItems, 3); // Dividir en filas de 3
+
   return (
     <>
       {/* Móvil: scroll horizontal */}
-      <div className="block md:hidden w-full overflow-x-auto ">
-        <div className="flex space-x-4 p-4 min-w-max ">
-          {portfolioItems.map((item, i) => (
-            <Card key={i} item={item} />
-          ))}
+      <div className="block md:hidden mt-10">
+          <h1 className="text-center">Servicios</h1>
+        <div className=" w-full overflow-x-auto">
+          <div className="flex space-x-4 p-4 min-w-max ">
+            {portfolioItems.map((item, i) => (
+              <Card key={i} item={item} />
+            ))}
+          </div>
         </div>
       </div>
-      {/* Desktop: grilla */}
-      <div className="hidden md:grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center p-4 text-center">
-        {portfolioItems.map((item, i) => (
-          <Card key={i} item={item} />
+      {/* Escritorio: grilla centrando última fila si tiene < 3 */}
+      <div className="hidden md:flex md:flex-col gap-6 p-4 text-center">
+        <h1>Servicios</h1>
+        {filas.map((fila, filaIndex) => (
+          <div
+            key={filaIndex}
+            className={`grid gap-6 justify-items-center ${
+              fila.length === 1
+                ? "grid-cols-1"
+                : fila.length === 2
+                ? "grid-cols-2"
+                : "grid-cols-3"
+            }`}
+          >
+            {fila.map((item, i) => (
+              <Card key={i} item={item} />
+            ))}
+          </div>
         ))}
       </div>
     </>
