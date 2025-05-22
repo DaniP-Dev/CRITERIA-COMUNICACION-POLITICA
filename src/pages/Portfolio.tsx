@@ -8,7 +8,7 @@ const Portfolio = () => {
     {
       title: "Social Listening Inteligente",
       description: "Tendencias que alertan, acciones que aciertan.",
-      imageUrl: "imgs/monitoreo-sociales.webp",
+      imageUrl: "imgs/social-listening.jpg",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Social Listening Inteligente*`
       )}`,
@@ -16,7 +16,7 @@ const Portfolio = () => {
     {
       title: "Estrategia de Contra-Campaña y Contención Digital",
       description: "Del caos al orden, con palabras que importen.",
-      imageUrl: "imgs/monitoreo-sociales.webp",
+      imageUrl: "imgs/contraCampana.jpg",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Estrategia de Contra-Campaña y Contención Digital*`
       )}`,
@@ -24,15 +24,15 @@ const Portfolio = () => {
     {
       title: "Personal Branding Político",
       description: "Donde el mapa habla, la estrategia avanza.",
-      imageUrl: "imgs/monitoreo-sociales.webp",
+      imageUrl: "imgs/branding.jpg",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Personal Branding Político*`
       )}`,
     },
     {
-      title: "Plataforma Política a tu Medida",
+      title: "Desarrollo de Infraestructura Política",
       description: "Las campañas fuertes nacen de grupos preparados.",
-      imageUrl: "imgs/monitoreo-sociales.webp",
+      imageUrl: "imgs/campanaPolitica.jpg",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Plataforma Política a tu Medida*`
       )}`,
@@ -48,7 +48,7 @@ const Portfolio = () => {
     {
       title: "Estudios Demográficos y Análisis Territorial",
       description: "Análisis profundo, triunfo rotundo",
-      imageUrl: "imgs/monitoreo-sociales.webp",
+      imageUrl: "imgs/estudioDemografico.jpg",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Estudios Demográficos y Análisis Territorial*`
       )}`,
@@ -56,7 +56,7 @@ const Portfolio = () => {
     {
       title: "Relaciones Estratégicas y Gestión de Medios",
       description: "En la prensa y la red, mando firme y sed.",
-      imageUrl: "imgs/monitoreo-sociales.webp",
+      imageUrl: "imgs/alianzasEstrategicas.jpg",
       whatsappUrl: `https://wa.me/${numero}?text=${encodeURIComponent(
         `Hola, estoy interesado en recibir más información sobre:\n• *Relaciones Estratégicas y Gestión de Medios*`
       )}`,
@@ -77,36 +77,39 @@ const Portfolio = () => {
 
   return (
     <>
-      {/* Móvil: scroll horizontal */}
-      <div className="block md:hidden mt-10">
-          <h1 className="text-center">Servicios</h1>
-        <div className=" w-full overflow-x-auto">
-          <div className="flex space-x-4 p-4 min-w-max ">
-            {portfolioItems.map((item, i) => (
-              <Card key={i} item={item} />
-            ))}
+      <div className="mt-10">
+        <h1 className="text-3xl md:text-4xl font-bold text-center ">
+          Servicios
+        </h1>
+        {/* Móvil: scroll horizontal */}
+        <div className="block md:hidden">
+          <div className=" w-full overflow-x-auto">
+            <div className="flex space-x-4 p-4 min-w-max ">
+              {portfolioItems.map((item, i) => (
+                <Card key={i} item={item} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      {/* Escritorio: grilla centrando última fila si tiene < 3 */}
-      <div className="hidden md:flex md:flex-col gap-6 p-4 text-center">
-        <h1>Servicios</h1>
-        {filas.map((fila, filaIndex) => (
-          <div
-            key={filaIndex}
-            className={`grid gap-6 justify-items-center ${
-              fila.length === 1
-                ? "grid-cols-1"
-                : fila.length === 2
-                ? "grid-cols-2"
-                : "grid-cols-3"
-            }`}
-          >
-            {fila.map((item, i) => (
-              <Card key={i} item={item} />
-            ))}
-          </div>
-        ))}
+        {/* Escritorio: grilla centrando última fila si tiene < 3 */}
+        <div className="hidden md:flex md:flex-col gap-6 p-4 text-center">
+          {filas.map((fila, filaIndex) => (
+            <div
+              key={filaIndex}
+              className={`grid gap-6 justify-items-center ${
+                fila.length === 1
+                  ? "grid-cols-1"
+                  : fila.length === 2
+                  ? "grid-cols-2"
+                  : "grid-cols-3"
+              }`}
+            >
+              {fila.map((item, i) => (
+                <Card key={i} item={item} />
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
