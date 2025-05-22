@@ -79,7 +79,7 @@ const Portfolio = () => {
     <>
       <div className="mt-10">
         <h1 className="text-3xl md:text-4xl font-bold text-center ">
-          Servicios
+          No damos consejos: construimos victorias con evidencia.
         </h1>
         {/* Móvil: scroll horizontal */}
         <div className="block md:hidden">
