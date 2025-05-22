@@ -123,14 +123,14 @@ const LibroImagenes = () => {
           className="shadow-xl rounded-lg overflow-hidden"
           style={{ touchAction: "none" }}
           startPage={0}
-          flippingTime={5000} // even slower, softer animation
+          flippingTime={2000} // even slower, softer animation
           usePortrait={true}
           startZIndex={0}
           autoSize={true}
           clickEventForward={false}
           useMouseEvents={true}
           maxShadowOpacity={0.5}
-          swipeDistance={0}
+          swipeDistance={30}
           showPageCorners={false}
           disableFlipByClick={true}
           {...mobileBlockEvents}
