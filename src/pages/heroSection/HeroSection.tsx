@@ -47,10 +47,21 @@ const HeroSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div className="bg-gradient-to-b from-red-600 to-red-400 min-h-screen">
-      <section className="w-full h-[10vh]" />
+    <div className="relative min-h-screen">
+      {/* Video de fondo */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        src="/video/videoBG.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      {/* Capa de gradiente encima del video */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-red-600 to-red-400 opacity-80 z-10" />
+      <section className="relative w-full h-[10vh] z-20" />
       {/* no modificar*/} 
-      <section className="w-full h-[90vh]">
+      <section className="relative w-full h-[90vh] z-20">
         <div
           className="flex flex-col items-center justify-center h-full w-full"
           ref={ref}
