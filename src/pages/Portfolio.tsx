@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../components/naviBar/portafolio/Card";
-import { PortfolioItem } from "../components/naviBar/portafolio/PortafolioItem";
+import Card from "../components/portafolio/Card";
+import { PortfolioItem } from "../components/portafolio/PortafolioItem";
 
 const Portfolio = () => {
   const numero = 3016328564;
