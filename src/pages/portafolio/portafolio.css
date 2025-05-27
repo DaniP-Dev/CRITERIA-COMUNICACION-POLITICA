@@ -1,60 +1,53 @@
 .container {
   overflow: hidden;
 }
-.container:hover .ocultar{
-  display: none;
-}
 
 .contenido {
+  border: 1px solid green;
   display: none;
   margin-top: 10px;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  background: #040723;
-  color: #fff;
-  transition: max-height 0.15s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.12s cubic-bezier(0.4, 0, 0.2, 1), background 0.15s, color 0.15s;
 }
-.container.hovered .contenido,
-.contenido.activo {
-  display: block;
-  max-height: 500px;
-  opacity: 1;
-  background: #ede6dc;
-  color: #040723;
+.container:hover .ocultar {
+  display: none;
 }
 
-.container {
-  background: #0b0f35;
-  color: #fff;
-  transition: background 0.15s, color 0.15s;
+.container:hover .contenido {
+  display: block;
+  max-height: 100%;
 }
-.container.hovered {
-  background: #040723;
-  color: #fff;
+
+.titulo {
+  width: 100%;
+  height: auto;
+}
+.container:hover .titulo {
+  height: 30px;
+  display: flex;
 }
 
 /* -------- Breakpoint para computadores -------- */
 @media (min-width: 768px) {
   .container {
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.2s linear, border 0.2s linear, box-shadow 0.2s linear;
   }
   .container:hover {
-    width: 100vw;
+    border: 1px solid blue;
+    width: 150vw;
+    height: 55vh;
+    transition: width 0.5s linear, border 0.5s linear, box-shadow 0.5s linear;
+    box-shadow: 24px 0 48px -8px rgba(0, 0, 0, 1); /* Sombra más fuerte y difuminada en eje X */
   }
 }
 /* -------- Breakpoint para celulares -------- */
 @media (max-width: 767px) {
   .contenido {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0; /* contenido oculto */
+    overflow: hidden; /* ocultar desbordes */
+    transition: max-height 0.5s ease;
   }
+
   .contenido.activo {
-    max-height: 500px;
-    opacity: 1;
+    max-height: 500px; /* o el valor que permita mostrar todo */
+    transition: max-height 0.5s ease;
   }
 }

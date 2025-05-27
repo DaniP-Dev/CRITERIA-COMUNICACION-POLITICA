@@ -11,7 +11,7 @@ const navbarClass = "w-full fixed top-0 left-0 z-50 bg-[#040723]/50 text-white";
 const navbarInnerClass =
   "max-w-7xl mx-auto px-4 py-3 flex items-center justify-between h-[10vh] ";
 const drawerClass =
-  "bg-white md:hidden fixed h-auto w-full transition-transform duration-300 ease-in-out transform z-50";
+  "bg-[#040723] md:hidden fixed h-auto w-full transition-transform duration-300 ease-in-out transform z-50";
 const drawerOpenClass = "translate-x-0";
 const drawerClosedClass = "-translate-x-full";
 const drawerLinkClass = "block py-2 relative group";

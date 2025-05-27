@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
+import { motion } from "framer-motion"; // Agrega esta línea
 
 const btnClass =
   "absolute top-1/2 -translate-y-1/2 z-20 bg-[#D63122] hover:bg-[#b91c1c] text-white rounded-full shadow p-2 md:p-3 transition disabled:opacity-50 pointer-events-auto border-2 border-[#EDE6DC]";
@@ -53,14 +54,18 @@ const LibroImagenes = () => {
     onTouchEnd: (e: React.TouchEvent) => e.preventDefault(),
   };
 
-  // Navigation buttons
+  // Navigation buttons (ahora con motion)
   const leftButton = (
-    <button
+    <motion.button
       onClick={goPrev}
       className={`${btnClass} left-0 hidden sm:block`}
       aria-label="Página anterior"
       disabled={page === 0}
       tabIndex={0}
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ amount: 0.3 }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -76,15 +81,19 @@ const LibroImagenes = () => {
           d="M15.75 19.5L8.25 12l7.5-7.5"
         />
       </svg>
-    </button>
+    </motion.button>
   );
   const rightButton = (
-    <button
+    <motion.button
       onClick={goNext}
       className={`${btnClass} right-0 hidden sm:block`}
       aria-label="Página siguiente"
       disabled={page >= totalPages - 1}
       tabIndex={0}
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ amount: 0.3 }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -100,11 +109,17 @@ const LibroImagenes = () => {
           d="M8.25 4.5l7.5 7.5-7.5 7.5"
         />
       </svg>
-    </button>
+    </motion.button>
   );
 
   return (
-    <div className="flex justify-center mt-10 w-full relative h-96  select-none rounded-xl  bg-[#EDE6DC] ">
+    <motion.div
+      className="flex justify-center mt-10 w-full relative h-96 select-none rounded-xl bg-[#EDE6DC]"
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ amount: 0.3 }}
+    >
       {leftButton}
       <div className="mx-8 w-full max-w-md md:max-w-2xl lg:max-w-3xl h-full flex items-center justify-center">
         <HTMLFlipBook
@@ -146,7 +161,7 @@ const LibroImagenes = () => {
         </HTMLFlipBook>
       </div>
       {rightButton}
-    </div>
+    </motion.div>
   );
 };
 

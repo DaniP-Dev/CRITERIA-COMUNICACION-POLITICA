@@ -1,50 +1,50 @@
 [
     {
-        "titulo": "Social Listening Inteligente",
+        "titulo": "Social Listening",
         "subTitulo": "Tendencias que alertan, acciones que aciertan.",
-        "contenido": "Contenido de la sección 3",
+        "contenido": "Monitoreo de tendencias en redes sobre el cliente y su competencia.\nIdentificación de oportunidades de discurso y temas sensibles.\nAnálisis de sentimiento y percepción pública.\nDetección temprana y gestión de crisis reputacional.\nSoftware, Herramientas detalladas (Decoditive pro, spark, social listening)",
         "imageUrl": "imgs/social-listening.jpg",
         "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Social%20Listening%20Inteligente*"
     },
     {
-        "titulo": "Estrategia de Contra-Campaña y Contención Digital",
+        "titulo": "Contra-Campaña Digital",
         "subTitulo": "Del caos al orden, con palabras que importen.",
-        "contenido": "Contenido de la sección 3",
+        "contenido": "Social listening orientado\nAnálisis y estrategia para la comunicación de emergencia\nAlineación y estudios narrativos",
         "imageUrl": "imgs/contraCampana.jpg",
         "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Estrategia%20de%20Contra-Campaña%20y%20Contención%20Digital*"
     },
     {
-        "titulo": "Personal Branding Político",
+        "titulo": "Branding Político",
         "subTitulo": "Donde el mapa habla, la estrategia avanza.",
-        "contenido": "Contenido de la sección 3",
+        "contenido": "Perfilamiento del candidato (gustos, aficiones, etc.)\nReconocimiento o existencia\nAnálisis demográfico de votación y métricas territoriales\nContexto narrativo y enfoque territorial\nCartografía social\nManual de identidad",
         "imageUrl": "imgs/branding.jpg",
         "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Personal%20Branding%20Político*"
     },
     {
-        "titulo": "Desarrollo de Infraestructura Política",
+        "titulo": "Infraestructura Política",
         "subTitulo": "Las campañas fuertes nacen de grupos preparados.",
-        "contenido": "Contenido de la sección 3",
+        "contenido": "Conformación y formación de equipo asesor (en temas de función pública y comunicación política)\nImplementación de grupos de resonancia: estrategia de consolidación de grupos\nPlan de Medios\nDiseño, administración e implementación de estrategia en sedes\nEscuela de voluntarios",
         "imageUrl": "imgs/campanaPolitica.jpg",
         "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Plataforma%20Política%20a%20tu%20Medida*"
     },
     {
-        "titulo": "Estrategia Digital y Redes Sociales de Alto Impacto",
+        "titulo": "Estrategia Digital",
         "subTitulo": "Estrategia digital, poder viral.",
-        "contenido": "Contenido de la sección 3",
+        "contenido": "Diseño de estrategia digital\nGestión y segmentación de audiencias en redes sociales\nCreación y curaduría de contenido estratégico (posts, videos, artículos, discursos).\nPosicionamiento de narrativa política en medios digitales",
         "imageUrl": "imgs/monitoreo-sociales.webp",
         "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Estrategia%20Digital%20y%20Redes%20Sociales%20de%20Alto%20Impacto*"
     },
     {
-        "titulo": "Estudios Demográficos y Análisis Territorial",
+        "titulo": "Análisis Demográfico",
         "subTitulo": "Análisis profundo, triunfo rotundo",
-        "contenido": "Contenido de la sección 3",
+        "contenido": "Análisis del comportamiento electoral por región.\nIdentificación de nichos de votantes y estrategias de segmentación.\nEstudios de migración de voto y preferencias políticas.",
         "imageUrl": "imgs/estudioDemografico.jpg",
         "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Estudios%20Demográficos%20y%20Análisis%20Territorial*"
     },
     {
-        "titulo": "Relaciones Estratégicas y Gestión de Medios",
+        "titulo": "Gestión de Medios",
         "subTitulo": "En la prensa y la red, mando firme y sed.",
-        "contenido": "Contenido de la sección 3",
+        "contenido": "Construcción de alianzas con figuras clave del sector político.\nGestión de entrevistas y presencia en medios tradicionales.\nCreación de estrategias de crisis y respuesta mediática.\nAsesoría en construcción de imagen pública y manejo de controversias.",
         "imageUrl": "imgs/alianzasEstrategicas.jpg",
         "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Relaciones%20Estratégicas%20y%20Gestión%20de%20Medios*"
     }

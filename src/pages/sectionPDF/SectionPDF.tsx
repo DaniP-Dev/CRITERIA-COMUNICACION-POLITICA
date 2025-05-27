@@ -3,8 +3,8 @@ import LibroImagenes from "./LibroImagenes";
 
 const SectionPDF = () => {
   return (
-    <main className="flex flex-col items-center justify-start bg-[#EDE6DC] min-h-screen">
-      <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-6">
+    <main className="flex flex-col items-center justify-start bg-[#EDE6DC] min-h-screen py-25">
+      <h1 className="text-3xl md:text-4xl font-bold text-center text-[#040723] mb-6">
         Boletín de Comunicación Digital en Colombia
       </h1>
       <div className="w-full max-w-md md:max-w-2xl lg:max-w-3xl bg-[#040723] rounded-xl shadow-lg px-6 border-4 text-center">

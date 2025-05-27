@@ -55,6 +55,11 @@ h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   line-height: 1.2;
 }
+.Smal{
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #666;
+}
 
 /* Botones */
 
@@ -143,9 +148,9 @@ img {
 .card {
   border-radius: 16px;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.06);
-  padding: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
-
 /* Listas y separadores */
 ul,
 ol {
