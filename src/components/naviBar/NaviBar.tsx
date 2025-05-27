@@ -6,16 +6,16 @@ const links = [
   { label: "Contacto", href: "#" },
 ];
 
-// --- Estilos principales ---
-const navbarClass = "w-full fixed top-0 left-0 z-50 bg-red-400/40 backdrop-blur-md";
+// Solo clases para responsividad y tamaños
+const navbarClass = "w-full fixed top-0 left-0 z-50 bg-[#040723]/50 text-white";
 const navbarInnerClass =
-  "max-w-7xl mx-auto px-4 py-3 flex items-center justify-between shadow-2xl h-[10vh]";
+  "max-w-7xl mx-auto px-4 py-3 flex items-center justify-between h-[10vh] ";
 const drawerClass =
-  "md:hidden fixed h-screen w-64 transition-transform duration-300 ease-in-out transform z-50 bg-white";
-const drawerOpenClass = "translate-x-0 shadow-2xl";
+  "bg-white md:hidden fixed h-auto w-full transition-transform duration-300 ease-in-out transform z-50";
+const drawerOpenClass = "translate-x-0";
 const drawerClosedClass = "-translate-x-full";
-const drawerLinkClass = "block py-2 text-black";
-const desktopLinkClass = "text-gray-800 hover:text-blue-600";
+const drawerLinkClass = "block py-2 relative group";
+const desktopLinkClass = "relative group";
 
 // Función para validar rutas internas seguras
 const isSafeHref = (href: string) =>
@@ -31,6 +31,10 @@ const renderLinks = (onClick?: () => void, className?: string) =>
       onClick={onClick}
     >
       {link.label}
+      <span
+        className="absolute left-0 -bottom-1 w-0 h-[3px] bg-[#D63122] transition-all duration-300 group-hover:w-full"
+        aria-hidden="true"
+      />
     </a>
   ));
 
@@ -66,7 +70,7 @@ const NaviBar = () => {
   return (
     <nav className={navbarClass}>
       <div className={navbarInnerClass}>
-        <div className="text-xl font-bold">Mi Sitio</div>
+        <div className="text-xl font-bold">Logo</div>
 
         {/* Vista escritorio */}
         <div className="hidden md:flex space-x-6">
@@ -77,7 +81,7 @@ const NaviBar = () => {
         <button
           id="menu-toggle-btn"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-800  "
+          className="md:hidden"
         >
           {isOpen ? "✕" : "☰"}
         </button>
@@ -89,7 +93,7 @@ const NaviBar = () => {
           isOpen ? drawerOpenClass : drawerClosedClass
         } `}
       >
-        <div className="p-4 overflow-y-auto max-h-screen   ">
+        <div className="p-4 overflow-y-auto max-h-screen">
           {renderLinks(() => setIsOpen(false), drawerLinkClass)}
         </div>
       </div>

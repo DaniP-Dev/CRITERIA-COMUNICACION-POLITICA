@@ -1,0 +1,51 @@
+[
+    {
+        "titulo": "Social Listening Inteligente",
+        "subTitulo": "Tendencias que alertan, acciones que aciertan.",
+        "contenido": "Contenido de la sección 3",
+        "imageUrl": "imgs/social-listening.jpg",
+        "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Social%20Listening%20Inteligente*"
+    },
+    {
+        "titulo": "Estrategia de Contra-Campaña y Contención Digital",
+        "subTitulo": "Del caos al orden, con palabras que importen.",
+        "contenido": "Contenido de la sección 3",
+        "imageUrl": "imgs/contraCampana.jpg",
+        "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Estrategia%20de%20Contra-Campaña%20y%20Contención%20Digital*"
+    },
+    {
+        "titulo": "Personal Branding Político",
+        "subTitulo": "Donde el mapa habla, la estrategia avanza.",
+        "contenido": "Contenido de la sección 3",
+        "imageUrl": "imgs/branding.jpg",
+        "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Personal%20Branding%20Político*"
+    },
+    {
+        "titulo": "Desarrollo de Infraestructura Política",
+        "subTitulo": "Las campañas fuertes nacen de grupos preparados.",
+        "contenido": "Contenido de la sección 3",
+        "imageUrl": "imgs/campanaPolitica.jpg",
+        "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Plataforma%20Política%20a%20tu%20Medida*"
+    },
+    {
+        "titulo": "Estrategia Digital y Redes Sociales de Alto Impacto",
+        "subTitulo": "Estrategia digital, poder viral.",
+        "contenido": "Contenido de la sección 3",
+        "imageUrl": "imgs/monitoreo-sociales.webp",
+        "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Estrategia%20Digital%20y%20Redes%20Sociales%20de%20Alto%20Impacto*"
+    },
+    {
+        "titulo": "Estudios Demográficos y Análisis Territorial",
+        "subTitulo": "Análisis profundo, triunfo rotundo",
+        "contenido": "Contenido de la sección 3",
+        "imageUrl": "imgs/estudioDemografico.jpg",
+        "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Estudios%20Demográficos%20y%20Análisis%20Territorial*"
+    },
+    {
+        "titulo": "Relaciones Estratégicas y Gestión de Medios",
+        "subTitulo": "En la prensa y la red, mando firme y sed.",
+        "contenido": "Contenido de la sección 3",
+        "imageUrl": "imgs/alianzasEstrategicas.jpg",
+        "whatsappUrl": "https://wa.me/NUMERO?text=Hola,%20estoy%20interesado%20en%20recibir%20más%20información%20sobre:%0A%E2%80%A2%20*Relaciones%20Estratégicas%20y%20Gestión%20de%20Medios*"
+    }
+]

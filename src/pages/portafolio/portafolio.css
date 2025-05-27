@@ -1,0 +1,60 @@
+.container {
+  overflow: hidden;
+}
+.container:hover .ocultar{
+  display: none;
+}
+
+.contenido {
+  display: none;
+  margin-top: 10px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: #040723;
+  color: #fff;
+  transition: max-height 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.12s cubic-bezier(0.4, 0, 0.2, 1), background 0.15s, color 0.15s;
+}
+.container.hovered .contenido,
+.contenido.activo {
+  display: block;
+  max-height: 500px;
+  opacity: 1;
+  background: #ede6dc;
+  color: #040723;
+}
+
+.container {
+  background: #0b0f35;
+  color: #fff;
+  transition: background 0.15s, color 0.15s;
+}
+.container.hovered {
+  background: #040723;
+  color: #fff;
+}
+
+/* -------- Breakpoint para computadores -------- */
+@media (min-width: 768px) {
+  .container {
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .container:hover {
+    width: 100vw;
+  }
+}
+/* -------- Breakpoint para celulares -------- */
+@media (max-width: 767px) {
+  .contenido {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .contenido.activo {
+    max-height: 500px;
+    opacity: 1;
+  }
+}

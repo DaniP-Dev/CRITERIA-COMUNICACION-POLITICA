@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import HTMLFlipBook from "react-pageflip";
 
 const btnClass =
-  "absolute top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-blue-100 text-blue-600 rounded-full shadow p-2 md:p-3 transition disabled:opacity-50 pointer-events-auto";
+  "absolute top-1/2 -translate-y-1/2 z-20 bg-[#D63122] hover:bg-[#b91c1c] text-white rounded-full shadow p-2 md:p-3 transition disabled:opacity-50 pointer-events-auto border-2 border-[#EDE6DC]";
 
 // List of image pages (add more as needed)
 const imagePages = [
@@ -17,11 +17,11 @@ type BookPage = { key: string; content: React.ReactNode };
 const bookPages: BookPage[] = imagePages.map((img, i) => ({
   key: `img-${i}`,
   content: (
-    <div className="w-full h-full flex items-center justify-center bg-white">
+    <div className=" flex items-center justify-center bg-[#EDE6DC]">
       <img
         src={img}
         alt={`Página ${i + 1}`}
-        className="max-h-[90%] max-w-[90%] object-contain rounded shadow"
+        className="max-h-[90%] max-w-[90%] object-contain rounded shadow border-2 border-[#ceaf83]"
         draggable={false}
       />
     </div>
@@ -104,7 +104,7 @@ const LibroImagenes = () => {
   );
 
   return (
-    <div className="flex justify-center mt-10 w-full relative h-96 bg-gray-100 select-none">
+    <div className="flex justify-center mt-10 w-full relative h-96  select-none rounded-xl  bg-[#EDE6DC] ">
       {leftButton}
       <div className="mx-8 w-full max-w-md md:max-w-2xl lg:max-w-3xl h-full flex items-center justify-center">
         <HTMLFlipBook
@@ -123,7 +123,7 @@ const LibroImagenes = () => {
           className="shadow-xl rounded-lg overflow-hidden"
           style={{ touchAction: "none" }}
           startPage={0}
-          flippingTime={2000} // even slower, softer animation
+          flippingTime={2000}
           usePortrait={true}
           startZIndex={0}
           autoSize={true}
@@ -138,7 +138,7 @@ const LibroImagenes = () => {
           {bookPages.map((p) => (
             <div
               key={p.key}
-              className="w-full h-full bg-white flex items-center justify-center"
+              className="w-full h-full bg-[#EDE6DC] flex items-center justify-center"
             >
               {p.content}
             </div>

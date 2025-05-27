@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -8,7 +9,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'Inter', Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -22,46 +23,64 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.15rem;
   margin: 0;
   padding: 0;
 }
 
 /* Títulos */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: inherit;
-  font-weight: bold;
+h1 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: -1px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+}
+h2 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.15;
+}
+h3, h4, h5, h6 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.5em;
   line-height: 1.2;
 }
 
 /* Botones */
-button,
-input[type="button"],
-input[type="submit"] {
-  border: none;
-  border-radius: 9999px;
-  padding: 0.5em 1.5em;
-  font-weight: bold;
-  font-family: inherit;
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #25D366;
+  color: white;
+  padding: 0.6em 1.2em;
   font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
   cursor: pointer;
-  transition: box-shadow 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
-  outline: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-button:active,
-input[type="button"]:active,
-input[type="submit"]:active {
-  transform: scale(0.98);
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+}
+
+.btn-whatsapp:active {
+  transform: scale(0.97);
 }
 
 /* Inputs y selects */
@@ -110,7 +129,6 @@ tr:last-child {
 
 /* Enlaces */
 a {
-  text-decoration: none;
   font-weight: 500;
   transition: text-decoration 0.2s;
 }
