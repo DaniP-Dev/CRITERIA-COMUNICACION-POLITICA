@@ -1,0 +1,48 @@
+/* styles/sectionpdf.css */
+
+/* Si LibroImagenes renderiza un iframe o <object> para el PDF, por ejemplo: */
+.section-pdf__iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+/* Si quieres forzar un “min-width” o responsividad adicional */
+@media (max-width: 768px) {
+  .section-pdf__iframe {
+    height: 400px;
+  }
+}
+
+
+/* styles/portafolio.css */
+
+/* Si quieres un mínimo más estricto de altura en pantallas md+ */
+@media (min-width: 768px) {
+  .portafolio__section {
+    min-height: 50vh;
+  }
+}
+
+/* Fondo con blur: ya lo definimos inline, pero si quieres parámetros extra: */
+.portafolio__blur-bg {
+  transition: filter 0.7s ease, opacity 0.7s ease;
+  backdrop-filter: blur(4px);
+  /* Notar que Tailwind solo aplica `blur-sm`, pero si quieres más borroso: */
+  /* filter: blur(6px); */
+}
+
+/* Helper para ocultar o mostrar el ícono “+” en cada tarjeta */
+.ocultar {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.relative:hover .ocultar {
+  opacity: 1;
+}
+
+/* Si deseas extender la transición de box-shadow: */
+.portafolio__card {
+  transition: box-shadow 0.5s ease, background-color 0.5s ease;
+}

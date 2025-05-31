@@ -1,7 +1,12 @@
 import React from "react";
+import About from "@/pages/About";
 
 const page = () => {
-  return <div>pagina aobout</div>;
+  return (
+    <>
+      <About />
+    </>
+  );
 };
 
 export default page;

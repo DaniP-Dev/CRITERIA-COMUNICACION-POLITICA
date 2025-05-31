@@ -1,29 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-blanco: #ffffff;
+  --color-primario: #2c3e50; /* Azul petróleo oscuro */
+  --color-secundario: #7f8c8d; /* Gris pizarra medio */
+  --color-fondo-alt: #f7f7f7; /* Gris muy claro de fondo */
+  --color-texto-secundario: #64748b; /* Texto gris oscuro (para lists inactivas) */
+  --color-active-text: #4f46e5; /* Texto azul/ púrpura (para lists activas) */
+  --color-texto-oscuro: #040723; /* Usado en títulos */
+  --color-input-bg: #181b3a;
+
+  --background: var(--color-fondo-alt);
+  --foreground: var(--color-primario);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Inter', Arial, Helvetica, sans-serif;
+  --font-sans: "Inter", Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
-    --foreground: #000000;
+    --background: var(--color-primario);
+    --foreground: var(--color-blanco);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-size: 1.15rem;
   margin: 0;
@@ -31,31 +41,34 @@ body {
 }
 
 /* Títulos */
-h1 {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
   font-weight: 700;
-  font-size: 3rem;
-  letter-spacing: -1px;
   margin-top: 0;
   margin-bottom: 0.5em;
   line-height: 1.1;
 }
+h1 {
+  font-size: 3rem;
+  letter-spacing: -1px;
+}
 h2 {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  font-weight: 700;
   font-size: 2.2rem;
-  margin-top: 0;
-  margin-bottom: 0.5em;
   line-height: 1.15;
 }
-h3, h4, h5, h6 {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0.5em;
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.3rem;
   line-height: 1.2;
 }
-.Smal{
+.Smal {
   font-size: 0.8rem;
   font-weight: 500;
   color: #666;
@@ -67,7 +80,7 @@ h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #25D366;
+  background-color: #128c7e;
   color: white;
   padding: 0.6em 1.2em;
   font-size: 1rem;

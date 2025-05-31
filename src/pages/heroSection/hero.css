@@ -1,9 +1,88 @@
+/* styles/hero.css */
+
+/* Wrapper de hero: ocupa toda la pantalla en X y adapta en Y */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* altura inicial 100% de viewport */
+  overflow: hidden;
+  z-index: 20;
+}
+
+/* Fondo del hero: el video debe cubrir todo */
+.hero-bg-video {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay oscuro si se desea (opcional) */
+/* .hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+} */
+
+/* Contenido del Hero (texto centrado) */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  color: var(--color-blanco);
+  font-size: 3rem;
+  line-height: 1.1;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Segundo bloque de texto sobre fondo clip-path (montaña) */
 .fondo-pico {
-    background-color: #040723;
-    clip-path: polygon(0% 13%, 50% 33%, 100% 15%, 100% 100%, 0% 100%);
-    height: 300px;
-    position: relative;
-    margin-top: -320px; /* Ajusta este valor según lo que necesites */
-    z-index: 10;
-    height: 120vh;
+  background-color: #040723; /* un azul muy oscuro apenas perceptible */
+  clip-path: polygon(0% 13%, 50% 33%, 100% 15%, 100% 100%, 0% 100%);
+  width: 100%;
+  /* Ajustamos la altura para que se “solape” con el hero principal */
+  position: relative;
+  margin-top: -150px; /* Se solapa aproximadamente 1.5 veces su altura sobre el hero */
+  z-index: 15;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px; /* deja espacio para que el texto no quede “cortado” */
+}
+
+/* Texto dentro de la sección clip-path */
+.fondo-pico h1,
+.fondo-pico p {
+  color: var(--color-blanco);
+  max-width: 80vw;
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* Línea/divisor con un borde grueso animado (si fuera necesario) */
+.fondo-pico .divider {
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-secundario);
+  margin-bottom: 2rem;
+}
+
+/* Small-text style si lo necesitas */
+.fondo-pico .Smal {
+  color: #ccc;
+  font-size: 0.9rem;
 }
