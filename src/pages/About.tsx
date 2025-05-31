@@ -1,50 +1,28 @@
 // components/QuienesSomos.jsx
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const About = () => {
-  const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
-  const [enviado, setEnviado] = useState(false);
-  const [error, setError] = useState("");
-
-const handleChange = (e: InputEvent) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-};
-
-interface FormState {
-    nombre: string;
-    email: string;
-    mensaje: string;
-}
-
-interface FormEvent extends React.FormEvent<HTMLFormElement> {}
-
-interface InputEvent extends React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> {}
-
-const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setError("");
-    if (!form.nombre || !form.email || !form.mensaje) {
-        setError("Por favor completa todos los campos.");
-        return;
-    }
-    setEnviado(true);
-    setForm({ nombre: "", email: "", mensaje: "" });
-    setTimeout(() => setEnviado(false), 4000);
-};
-
   return (
-    <div className="flex flex-col items-center bg-[var(--color-fondo-alt)] min-h-screen p-6">
+    <div className="flex flex-col items-center justify-center bg-[var(--color-fondo-alt)] min-h-screen p-6">
+      {/* Botón Volver al inicio */}
+      <a
+        href="/"
+        className="fixed top-6 left-6 z-50 px-4 py-2 bg-[var(--color-secundario)] text-[var(--color-blanco)] rounded-full font-semibold shadow-lg hover:bg-[var(--color-primario)] transition-colors duration-300 text-sm"
+      >
+        ← 
+      </a>
+
       {/* Sección Quiénes Somos */}
       <motion.section
-        className="w-full max-w-3xl bg-[var(--color-blanco)] rounded-lg shadow-lg p-8 mb-12"
+        className="w-full max-w-3xl bg-[var(--color-blanco)] rounded-lg shadow-lg p-8 mb-12 flex flex-col items-center text-center"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl font-bold text-[var(--color-primario)] mb-4 text-center">
+        <h1 className="text-4xl font-bold text-[var(--color-primario)] mb-4">
           Quiénes Somos
         </h1>
         <p className="text-[var(--color-texto-secundario)] text-lg leading-relaxed">
@@ -66,89 +44,15 @@ const handleSubmit = (e: FormEvent) => {
         </p>
       </motion.section>
 
-      {/* Sección de Contacto */}
-      <motion.section
-        className="w-full max-w-3xl bg-[var(--color-primario)] rounded-lg shadow-lg p-8"
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
+      {/* Botón WhatsApp */}
+      <a
+        href="https://wa.me/3016328564?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Criteria%20Comunicaci%C3%B3n%20Pol%C3%ADtica"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-6 py-3 bg-[var(--color-primario)] text-[var(--color-blanco)] rounded-full font-bold shadow-md hover:bg-[var(--color-secundario)] transition-colors duration-300 text-lg mx-auto block"
       >
-        <h2 className="text-3xl font-bold text-[var(--color-blanco)] mb-6 text-center">
-          Contáctanos
-        </h2>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Nombre"
-            value={form.nombre}
-            onChange={handleChange}
-            className="
-              p-3
-              rounded
-              bg-[var(--color-input-bg)]
-              text-[var(--color-blanco)]
-              border border-gray-700
-              focus:outline-none focus:ring-2 focus:ring-[var(--color-secundario)]
-            "
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Correo electrónico"
-            value={form.email}
-            onChange={handleChange}
-            className="
-              p-3
-              rounded
-              bg-[var(--color-input-bg)]
-              text-[var(--color-blanco)]
-              border border-gray-700
-              focus:outline-none focus:ring-2 focus:ring-[var(--color-secundario)]
-            "
-          />
-          <textarea
-            name="mensaje"
-            placeholder="Mensaje"
-            value={form.mensaje}
-            onChange={handleChange}
-            rows={4}
-            className="
-              p-3
-              rounded
-              bg-[var(--color-input-bg)]
-              text-[var(--color-blanco)]
-              border border-gray-700
-              focus:outline-none focus:ring-2 focus:ring-[var(--color-secundario)]
-            "
-          />
-          {error && <div className="text-red-400 text-sm">{error}</div>}
-          <motion.button
-            type="submit"
-            className="
-              bg-[var(--color-secundario)]
-              hover:bg-opacity-90
-              text-[var(--color-blanco)]
-              font-bold
-              py-2 px-4
-              rounded
-              transition-colors
-            "
-            whileTap={{ scale: 0.97 }}
-          >
-            Enviar
-          </motion.button>
-          {enviado && (
-            <motion.div
-              className="text-green-400 text-center mt-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              ¡Mensaje enviado! Nos pondremos en contacto pronto.
-            </motion.div>
-          )}
-        </form>
-      </motion.section>
+        Saber más
+      </a>
     </div>
   );
 };

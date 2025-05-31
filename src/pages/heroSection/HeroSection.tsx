@@ -22,26 +22,35 @@ const HeroSection = () => {
         />
 
         {/* Contenido centrado sobre el video */}
-        <div className="hero-content">
-          <motion.h1 style={{ y: parallaxY }}>
+        <div className="hero-content ">
+          <motion.h1 style={{ y: parallaxY }} className="drop-shadow-2xl">
             Criteria Comunicación Política
           </motion.h1>
         </div>
       </section>
 
       {/* Segundo bloque con clip-path */}
-      <section className="fondo-pico">
-        {/* Ejemplo de divider/ línea decorativa */}
-        <div className="divider"></div>
+      <section className="fondo-pico text-center">
+        {/* Divider animado infinitamente */}
+        <motion.div
+          className="divider"
+          animate={{ rotate: 360 }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            ease: "linear",
+          }}
+        />
 
         <motion.h1 style={{ y: parallaxY }}>
           Sobre Criteria Comunicación Política Group
         </motion.h1>
         <motion.p style={{ y: parallaxY }}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia eum
-          labore corporis necessitatibus, facere ad eveniet officia beatae
-          debitis, ducimus quam molestiae sit perspiciatis adipisci laboriosam
-          et porro a quidem?
+          Criteria Comunicación Política nació con la misión de brindar análisis
+          profundo de la conversación política en plataformas digitales. Nuestro
+          equipo combina experiencia en investigación, tecnología e inteligencia
+          de datos para ofrecer recomendaciones estratégicas a campañas y
+          organizaciones interesadas en entender la opinión pública.
         </motion.p>
       </section>
     </>

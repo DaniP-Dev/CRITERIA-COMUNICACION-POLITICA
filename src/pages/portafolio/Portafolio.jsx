@@ -141,12 +141,12 @@ const Portafolio = () => {
                 transition={{ duration: 0.5, type: "spring" }}
               >
                 {/* Subtítulo */}
-                <div className="font-semibold text-[var(--color-primario)]">
+                <div className="font-semibold text-[var(--color-primario)] drop-shadow">
                   {seccion.subTitulo}
                 </div>
 
                 {/* Lista de contenido */}
-                <ul className="mt-2 list-disc pl-6">
+                <ul className="mt-2 list-disc pl-6 text-xs font-semibold drop-shadow-sm">
                   {seccion.contenido.split("\n").map((item, idx) => (
                     <motion.li
                       key={idx}
@@ -191,6 +191,9 @@ const Portafolio = () => {
                     shadow-lg
                     hover:from-green-500 hover:to-blue-600
                     transition-all duration-300
+                    w-full
+                    text-center
+                    mx-auto
                   "
                   whileHover={{
                     scale: 1.08,

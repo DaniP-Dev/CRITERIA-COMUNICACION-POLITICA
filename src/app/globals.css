@@ -41,6 +41,10 @@ body {
 }
 
 /* Títulos */
+.three-d-text {
+  text-shadow: 1px 1px 0 #b0b0b0, 2px 2px 0 #a0a0a0,
+    3px 3px 6px rgba(44, 62, 80, 0.18);
+}
 h1,
 h2,
 h3,

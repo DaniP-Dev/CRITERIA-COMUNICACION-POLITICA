@@ -14,7 +14,9 @@ const Contacto = () => {
     value: string;
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -108,21 +110,12 @@ const Contacto = () => {
 
         {error && <div className="text-red-400 text-sm">{error}</div>}
 
-        <motion.button
+        <button
           type="submit"
-          className="
-            bg-[var(--color-secundario)]
-            hover:bg-opacity-90
-            text-[var(--color-blanco)]
-            font-bold
-            py-2 px-4
-            rounded
-            transition-colors
-          "
-          whileTap={{ scale: 0.97 }}
+          className="px-6 py-3 bg-[var(--color-primario)] text-[var(--color-blanco)] rounded-full font-bold shadow-xs shadow-white hover:bg-[var(--color-secundario)] transition-colors duration-300 text-lg mx-auto block"
         >
           Enviar
-        </motion.button>
+        </button>
 
         {enviado && (
           <motion.div

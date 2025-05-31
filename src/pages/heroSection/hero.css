@@ -45,6 +45,11 @@
   font-size: 3rem;
   line-height: 1.1;
   font-family: "Montserrat", sans-serif;
+  text-shadow:
+    0 4px 12px rgba(44, 62, 80, 0.22),
+    0 1.5px 0 rgba(0,0,0,0.10);
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 /* Segundo bloque de texto sobre fondo clip-path (montaña) */
@@ -71,6 +76,13 @@
   max-width: 80vw;
   margin-bottom: 1rem;
   font-family: "Inter", sans-serif;
+}
+
+.fondo-pico p {
+  text-shadow:
+    0 2px 8px rgba(44, 62, 80, 0.18),
+    0 1px 0 rgba(0,0,0,0.08);
+  font-weight: 500;
 }
 
 /* Línea/divisor con un borde grueso animado (si fuera necesario) */

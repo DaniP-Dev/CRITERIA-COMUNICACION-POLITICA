@@ -6,10 +6,13 @@
   border: 1px solid green;
   display: none;
   margin-top: 10px;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(44, 62, 80, 0.12), 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 .container:hover .ocultar {
   display: none;
 }
+
 
 .container:hover .contenido {
   display: block;

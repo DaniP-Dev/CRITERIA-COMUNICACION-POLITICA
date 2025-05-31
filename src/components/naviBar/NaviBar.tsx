@@ -2,8 +2,9 @@
 import { useState, useEffect } from "react";
 
 const links = [
+  { label: "Inicio", href: "/" },
   { label: "ES / EN", href: "#" },
-  { label: "Contacto", href: "#" },
+  { label: "Sobre Nosotros", href: "/about" },
 ];
 
 // Solo clases para responsividad y tamaños
