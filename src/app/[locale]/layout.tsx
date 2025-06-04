@@ -4,8 +4,6 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import Head from "next/head";
-import { readFile } from "fs/promises";
-import path from "path";
 
 // Metadata global para el sitio
 export const metadata: Metadata = {
@@ -13,11 +11,13 @@ export const metadata: Metadata = {
     default: "Criteria Comunicación Política",
     template: "%s | Criteria Comunicación Política",
   },
-  description: "Análisis profundo de la conversación política en plataformas digitales.",
+  description:
+    "Análisis profundo de la conversación política en plataformas digitales.",
   metadataBase: new URL("https://tusitio.com"),
   openGraph: {
     title: "Criteria Comunicación Política",
-    description: "Análisis profundo de la conversación política en plataformas digitales.",
+    description:
+      "Análisis profundo de la conversación política en plataformas digitales.",
     url: "https://tusitio.com",
     siteName: "Criteria Comunicación Política",
     images: [
@@ -34,7 +34,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Criteria Comunicación Política",
-    description: "Análisis profundo de la conversación política en plataformas digitales.",
+    description:
+      "Análisis profundo de la conversación política en plataformas digitales.",
     images: ["/twitter-image.jpg"],
   },
   keywords: ["comunicación política", "análisis", "datos", "estrategia"],
@@ -42,6 +43,9 @@ export const metadata: Metadata = {
   themeColor: "#ffffff",
   colorScheme: "light",
   applicationName: "Criteria Comunicación Política",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default async function LocaleLayout({
@@ -51,21 +55,10 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
+  // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
-  }
-
-  // Cargar mensajes de traducción
-  let messages = {};
-  try {
-    const file = await readFile(
-      path.resolve(process.cwd(), "src/messages", `${locale}.json`),
-      "utf8"
-    );
-    messages = JSON.parse(file);
-  } catch (e) {
-    notFound(); // Si no hay mensajes, lanzar 404
   }
 
   return (
@@ -74,9 +67,7 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

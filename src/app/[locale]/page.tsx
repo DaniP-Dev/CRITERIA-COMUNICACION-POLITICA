@@ -1,11 +1,11 @@
 "use client";
 import { useTranslations } from "next-intl";
 import NaviBar from "@/components/naviBar/NaviBar";
-import HeroSection from "@/pages/heroSection/HeroSection";
-import Contacto from "@/pages/Contacto";
-import SectionPDF from "@/pages/sectionPDF/SectionPDF";
+import HeroSection from "@/components/heroSection/HeroSection";
+import Contacto from "@/components/Contacto";
+import SectionPDF from "@/components/sectionPDF/SectionPDF";
 import Footer from "@/components/Footer";
-import Portafolio from "@/pages/portafolio/Portafolio";
+import Portafolio from "@/components/portafolio/Portafolio";
 
 export default function Home() {
   const t = useTranslations("HomePage");
