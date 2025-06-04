@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import EsEn from "../esEn/EsEn";
 
 const links = [
   { label: "Inicio", href: "/" },
@@ -24,20 +25,24 @@ const isSafeHref = (href: string) =>
 
 // Renderizado de links (para evitar redundancia)
 const renderLinks = (onClick?: () => void, className?: string) =>
-  links.map((link) => (
-    <a
-      key={link.label}
-      href={isSafeHref(link.href) ? link.href : "#"}
-      className={className}
-      onClick={onClick}
-    >
-      {link.label}
-      <span
-        className="absolute left-0 -bottom-1 w-0 h-[3px] bg-[#D63122] transition-all duration-300 group-hover:w-full"
-        aria-hidden="true"
-      />
-    </a>
-  ));
+  links.map((link) =>
+    link.label === "ES / EN" ? (
+      <EsEn key={link.label} className={className} />
+    ) : (
+      <a
+        key={link.label}
+        href={isSafeHref(link.href) ? link.href : "#"}
+        className={className}
+        onClick={onClick}
+      >
+        {link.label}
+        <span
+          className="absolute left-0 -bottom-1 w-0 h-[3px] bg-[#D63122] transition-all duration-300 group-hover:w-full"
+          aria-hidden="true"
+        />
+      </a>
+    )
+  );
 
 const NaviBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +76,14 @@ const NaviBar = () => {
   return (
     <nav className={`${navbarClass}`}>
       <div className={navbarInnerClass}>
-        <div className="text-xl font-bold">Logo</div>
+        <div className="text-xl font-bold h-10 w-32 flex items-center">
+          <img
+        src="/imgs/banner.png"
+        alt=""
+        className="h-full w-auto max-w-full object-contain"
+        style={{ display: "block" }}
+          />
+        </div>
 
         {/* Vista escritorio */}
         <div className="hidden md:flex space-x-6">

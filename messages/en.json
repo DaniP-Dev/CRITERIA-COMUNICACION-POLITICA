@@ -1,0 +1,25 @@
+{
+    "HomePage": {
+        "title": "Welcome",
+        "about": "About"
+    },
+    "HeroSection": {
+        "title": "Criteria Political Communication",
+        "aboutTitle": "About Criteria Political Communication Group",
+        "aboutText": "Criteria Political Communication was founded with the mission of providing in-depth analysis of political conversation on digital platforms. Our team combines experience in research, technology, and data intelligence to offer strategic recommendations to campaigns and organizations interested in understanding public opinion."
+    },
+    "ContactPage": {
+        "title": "Contact Us",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send",
+        "success": "Message sent! We will contact you soon.",
+        "errorRequired": "Please complete all fields."
+    },
+    "SectionPDF": {
+        "title": "Digital Bulletin",
+        "subtitle": "Download our AI-based report analyzing the digital conversation around the popular consultation. Discover key trends, most used hashtags, and sentiment analysis on social networks.",
+        "download": "Download"
+    }
+}

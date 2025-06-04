@@ -3,16 +3,14 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const Contacto = () => {
+  const t = useTranslations("ContactPage");
+
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
   const [enviado, setEnviado] = useState(false);
   const [error, setError] = useState("");
-
-  interface FormEventTarget extends EventTarget {
-    name: string;
-    value: string;
-  }
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -20,18 +18,11 @@ const Contacto = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  interface FormState {
-    nombre: string;
-    email: string;
-    mensaje: string;
-  }
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
-    // Aquí iría la integración con tu backend / servicio de correo
     if (!form.nombre || !form.email || !form.mensaje) {
-      setError("Por favor completa todos los campos.");
+      setError(t("errorRequired"));
       return;
     }
     setEnviado(true);
@@ -52,7 +43,7 @@ const Contacto = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        Contáctanos
+        {t("title")}
       </motion.h2>
 
       <motion.form
@@ -65,7 +56,7 @@ const Contacto = () => {
         <input
           type="text"
           name="nombre"
-          placeholder="Nombre"
+          placeholder={t("name")}
           value={form.nombre}
           onChange={handleChange}
           className="
@@ -80,7 +71,7 @@ const Contacto = () => {
         <input
           type="email"
           name="email"
-          placeholder="Correo electrónico"
+          placeholder={t("email")}
           value={form.email}
           onChange={handleChange}
           className="
@@ -94,7 +85,7 @@ const Contacto = () => {
         />
         <textarea
           name="mensaje"
-          placeholder="Mensaje"
+          placeholder={t("message")}
           value={form.mensaje}
           onChange={handleChange}
           rows={5}
@@ -114,7 +105,7 @@ const Contacto = () => {
           type="submit"
           className="px-6 py-3 bg-[var(--color-primario)] text-[var(--color-blanco)] rounded-full font-bold shadow-xs shadow-white hover:bg-[var(--color-secundario)] transition-colors duration-300 text-lg mx-auto block"
         >
-          Enviar
+          {t("send")}
         </button>
 
         {enviado && (
@@ -123,7 +114,7 @@ const Contacto = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            ¡Mensaje enviado! Nos pondremos en contacto pronto.
+            {t("success")}
           </motion.div>
         )}
       </motion.form>

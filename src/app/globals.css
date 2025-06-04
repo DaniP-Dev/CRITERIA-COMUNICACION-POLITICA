@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 @import "tailwindcss";
 
 :root {
   --color-blanco: #ffffff;
   --color-primario: #2c3e50; /* Azul petróleo oscuro */
   --color-secundario: #7f8c8d; /* Gris pizarra medio */
-  --color-fondo-alt: #f7f7f7; /* Gris muy claro de fondo */
+  --color-fondo-alt: #F9F9FB; /* Gris muy claro de fondo */
   --color-texto-secundario: #64748b; /* Texto gris oscuro (para lists inactivas) */
   --color-active-text: #4f46e5; /* Texto azul/ púrpura (para lists activas) */
   --color-texto-oscuro: #040723; /* Usado en títulos */
@@ -19,7 +18,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Inter", Arial, Helvetica, sans-serif;
+  --font-sans: "Lato", Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -33,7 +32,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-size: 1.15rem;
   margin: 0;
@@ -51,7 +50,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.5em;
@@ -153,6 +152,7 @@ tr:last-child {
 a {
   font-weight: 500;
   transition: text-decoration 0.2s;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 /* Imágenes */
 img {

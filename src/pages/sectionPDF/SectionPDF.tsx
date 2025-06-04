@@ -1,20 +1,20 @@
 // components/SectionPDF.jsx
 import React from "react";
+import { useTranslations } from "next-intl";
 import LibroImagenes from "./LibroImagenes";
 import "./sectionpdf.css"; // Opcional: solo si necesitas reglas extra
 
 const SectionPDF = () => {
+  const t = useTranslations("SectionPDF");
+
   return (
     <main className="flex flex-col items-center justify-start bg-[var(--color-fondo-alt)] min-h-screen py-16">
       {/* Título principal */}
       <h1 className="text-3xl md:text-4xl font-extrabold text-center text-[var(--color-primario)] mb-8 drop-shadow-lg">
-        Boletín Digital
+        {t("title")}
       </h1>
       <h3 className="text-2xl md:text-3xl mx-10 font-bold text-center text-[var(--color-primario)] drop-shadow-md mb-8">
-        Descarga nuestro informe basado en inteligencia artificial que analiza
-        la conversación digital alrededor de la consulta popular. Conoce las
-        tendencias clave, hashtags más usados y análisis de sentimiento en redes
-        sociales.
+        {t("subtitle")}
       </h3>
 
       {/* Contenedor del libro/visor y botón */}
@@ -30,7 +30,7 @@ const SectionPDF = () => {
           rel="noopener noreferrer"
           download
         >
-          Descargar
+          {t("download")}
         </a>
       </div>
     </main>
