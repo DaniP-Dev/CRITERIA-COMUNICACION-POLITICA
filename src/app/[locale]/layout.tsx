@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
 import Head from "next/head";
+import { readFile } from "fs/promises";
+import path from "path";
 
 // Metadata global para el sitio
 export const metadata: Metadata = {
@@ -49,10 +51,21 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
+  }
+
+  // Cargar mensajes de traducción
+  let messages = {};
+  try {
+    const file = await readFile(
+      path.resolve(process.cwd(), "src/messages", `${locale}.json`),
+      "utf8"
+    );
+    messages = JSON.parse(file);
+  } catch (e) {
+    notFound(); // Si no hay mensajes, lanzar 404
   }
 
   return (
@@ -61,7 +74,9 @@ export default async function LocaleLayout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
