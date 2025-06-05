@@ -13,16 +13,16 @@ export const metadata: Metadata = {
   },
   description:
     "Análisis profundo de la conversación política en plataformas digitales.",
-  metadataBase: new URL("https://tusitio.com"),
+  metadataBase: new URL("https://criteria-comunicacion-politica.vercel.app/"),
   openGraph: {
     title: "Criteria Comunicación Política",
     description:
       "Análisis profundo de la conversación política en plataformas digitales.",
-    url: "https://tusitio.com",
+    url: "https://criteria-comunicacion-politica.vercel.app/",
     siteName: "Criteria Comunicación Política",
     images: [
       {
-        url: "/opengraph-image.jpg",
+        url: "/imgs/logo.png",
         width: 1200,
         height: 630,
         alt: "Imagen Open Graph Criteria",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Criteria Comunicación Política",
     description:
       "Análisis profundo de la conversación política en plataformas digitales.",
-    images: ["/twitter-image.jpg"],
+    images: ["/imgs/logo.png"],
   },
   keywords: ["comunicación política", "análisis", "datos", "estrategia"],
   robots: { index: true, follow: true },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   colorScheme: "light",
   applicationName: "Criteria Comunicación Política",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/imgs/logo.png",
   },
 };
 
