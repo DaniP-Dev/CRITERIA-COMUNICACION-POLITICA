@@ -26,7 +26,11 @@ const HeroSection = () => {
         {/* Contenido centrado sobre el video */}
         <div className="hero-content ">
           <motion.h1 style={{ y: parallaxY }} className="drop-shadow-2xl">
-            <img src="/" alt="img" />
+            <img
+              src="/imgs/banner.png"
+              alt="img"
+              className="w-[50vw] h-auto inline-block align-middle"
+            />
             {t("title")}
           </motion.h1>
         </div>
@@ -45,12 +49,8 @@ const HeroSection = () => {
           }}
         />
 
-        <motion.h1 style={{ y: parallaxY }}>
-          {t("aboutTitle")}
-        </motion.h1>
-        <motion.p style={{ y: parallaxY }}>
-          {t("aboutText")}
-        </motion.p>
+        <motion.h1 style={{ y: parallaxY }}>{t("aboutTitle")}</motion.h1>
+        <motion.p style={{ y: parallaxY }}>{t("aboutText")}</motion.p>
       </section>
     </>
   );
