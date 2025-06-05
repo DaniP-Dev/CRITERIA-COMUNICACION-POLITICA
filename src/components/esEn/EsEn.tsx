@@ -21,11 +21,27 @@ const EsEn: React.FC<EsEnProps> = ({ className }) => {
   return (
     <button
       type="button"
-      className={className}
+      className={`relative group flex justify-center items-center mx-auto text-center ${className || ""}`}
       onClick={handleLocaleSwitch}
       aria-label="Cambiar idioma"
     >
-      ES / EN
+      {currentLocale === "es" ? (
+        <img
+          src="/imgs/flagEn.png"
+          alt="Español"
+          className="inline w-6 h-6 align-middle"
+        />
+      ) : (
+        <img
+          src="/imgs/flagEs.png"
+          alt="English"
+          className="inline w-6 h-6 align-middle"
+        />
+      )}
+      <span
+        className="absolute left-0 -bottom-1 w-0 h-[3px] bg-[#D63122] transition-all duration-300 group-hover:w-full"
+        aria-hidden="true"
+      />
     </button>
   );
 };

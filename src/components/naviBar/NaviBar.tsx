@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import EsEn from "../esEn/EsEn";
 
 const links = [
-  { label: "Inicio", href: "/" },
   { label: "ES / EN", href: "/" },
+  { label: "Inicio", href: "/" },
   { label: "Sobre Nosotros", href: "/about" },
 ];
 
@@ -14,11 +14,11 @@ const navbarClass =
 const navbarInnerClass =
   "max-w-7xl mx-auto px-4 py-3 flex items-center justify-between h-[10vh]  ";
 const drawerClass =
-  "bg-[#040723] md:hidden fixed h-auto w-full transition-transform duration-300 ease-in-out transform z-50 ";
+  "bg-[#040723] md:hidden fixed h-auto w-full transition-transform duration-300 ease-in-out transform z-50 text-center";
 const drawerOpenClass = "translate-x-0";
 const drawerClosedClass = "-translate-x-full";
 const drawerLinkClass = "block py-2 relative group";
-const desktopLinkClass = "relative group";
+const desktopLinkClass = "relative group inline-block px-2 py-1";
 
 // Función para validar rutas internas seguras
 const isSafeHref = (href: string) =>
@@ -28,23 +28,14 @@ const isSafeHref = (href: string) =>
 const renderLinks = (onClick?: () => void, className?: string) =>
   links.map((link) =>
     link.label === "ES / EN" ? (
-      <a
-        key={link.label}
-        href={isSafeHref(link.href) ? link.href : "#"}
-        className={className}
-        onClick={onClick}
-      >
-        <EsEn className="inline" />
-        <span
-          className="absolute left-0 -bottom-1 w-0 h-[3px] bg-[#D63122] transition-all duration-300 group-hover:w-full"
-          aria-hidden="true"
-        />
-      </a>
+      <div key={link.label} className={className?.includes("block") ? "block py-2 relative group" : "relative group inline-block"}>
+        <EsEn className="w-full px-2 py-1 text-center" />
+      </div>
     ) : (
       <a
         key={link.label}
         href={isSafeHref(link.href) ? link.href : "#"}
-        className={className}
+        className={className?.includes("block") ? "block py-2 relative group" : "relative group inline-block px-2 py-1"}
         onClick={onClick}
       >
         {link.label}
@@ -98,18 +89,22 @@ const NaviBar = () => {
         </div>
 
         {/* Vista escritorio */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-6 items-center">
           {renderLinks(undefined, desktopLinkClass)}
         </div>
 
-        {/* Botón menú móvil */}
-        <button
-          id="menu-toggle-btn"
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden"
-        >
-          {isOpen ? "✕" : "☰"}
-        </button>
+        {/* Botón idioma y menú móvil */}
+        <div className="flex md:hidden items-center gap-6">
+          <EsEn className="w-10 h-10 text-2xl" />
+          <button
+            id="menu-toggle-btn"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden w-10 h-10 text-3xl flex items-center justify-center"
+            style={{ minWidth: '2.5rem', minHeight: '2.5rem' }}
+          >
+            {isOpen ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
 
       {/* Drawer lateral móvil */}
@@ -119,7 +114,12 @@ const NaviBar = () => {
         } `}
       >
         <div className="p-4 overflow-y-auto max-h-screen">
-          {renderLinks(() => setIsOpen(false), drawerLinkClass)}
+          {/* En móvil, no renderizamos el botón de idioma dentro del drawer */}
+          {renderLinks(() => setIsOpen(false), drawerLinkClass)
+            .filter(
+              (el) =>
+                !(el && el.key && el.key.toString && el.key.toString() === "ES / EN")
+            )}
         </div>
       </div>
     </nav>
