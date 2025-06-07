@@ -15,11 +15,36 @@
         "message": "Mensaje",
         "send": "Enviar",
         "success": "¡Mensaje enviado! Nos pondremos en contacto pronto.",
+        "successShort": "¡Mensaje enviado con éxito!",
         "errorRequired": "Por favor completa todos los campos."
     },
     "SectionPDF": {
         "title": "Boletín Digital",
         "subtitle": "Descarga nuestro informe basado en inteligencia artificial que analiza la conversación digital alrededor de la consulta popular. Conoce las tendencias clave, hashtags más usados y análisis de sentimiento en redes sociales.",
         "download": "Descargar"
+    },
+    "about": {
+        "backButton": "Volver atras",
+        "title": "Quiénes Somos",
+        "paragraph1": "En Criteria Comunicación Política creemos en la importancia de entender la conversación digital alrededor de los procesos políticos. Nuestro equipo multidisciplinario combina experiencia en investigación, análisis de datos y tecnología para ofrecer asesoría estratégica a campañas, organizaciones y entidades interesadas en optimizar su presencia y mensaje en redes sociales y medios digitales.",
+        "paragraph2": "Desde nuestro lanzamiento, nos hemos enfocado en monitorizar tendencias, hashtags y opiniones clave que marcan el pulso de la opinión pública. Con un enfoque ético y riguroso, creamos informes periódicos que ayudan a nuestros clientes a tomar decisiones informadas y oportunas.",
+        "buttonWhatsapp": "Saber más"
+    },
+    "contactForm": {
+        "title": "Contáctanos",
+        "name": "Nombre",
+        "subject": "Asunto",
+        "email": "Correo electrónico",
+        "bio": "Cuéntanos sobre tu consulta",
+        "send": "Enviar",
+        "success": "¡Mensaje enviado!",
+        "successDetail": "Gracias por escribirnos. te responderemos a la brevedad posible.",
+        "close": "Cerrar",
+        "helper": "Por favor, completa todos los campos para que podamos ayudarte mejor."
+    },
+    "footer": {
+        "company": "ACME Industries Ltd.",
+        "slogan": "Ofreciendo tecnología confiable desde 1992",
+        "copyright": "Copyright © {year} - Todos los derechos reservados"
     }
 }

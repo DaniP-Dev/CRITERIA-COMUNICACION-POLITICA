@@ -1,11 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 @import "tailwindcss";
+@plugin "daisyui";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Neue+Montreal:wght@400;700&display=swap");
 
 :root {
+  --color-primary: #2c3e50;
+  --color-base: #F9F9FB;
+  --color-neutral: #232323;
+  --color-gray: #C4C4C4;
+  --color-accent-purple: #480CA8;
+  --color-accent-pink: #FF8FAB;
+  --color-accent-yellow: #E7F91C;
+  --color-accent-green: #39B54A;
+  --color-marca: #4EC5FF;
+
   --color-blanco: #ffffff;
   --color-primario: #2c3e50; /* Azul petróleo oscuro */
   --color-secundario: #7f8c8d; /* Gris pizarra medio */
-  --color-fondo-alt: #F9F9FB; /* Gris muy claro de fondo */
+  --color-fondo-alt: #f9f9fb; /* Gris muy claro de fondo */
   --color-texto-secundario: #64748b; /* Texto gris oscuro (para lists inactivas) */
   --color-active-text: #4f46e5; /* Texto azul/ púrpura (para lists activas) */
   --color-texto-oscuro: #040723; /* Usado en títulos */
@@ -18,7 +30,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Lato", Arial, Helvetica, sans-serif;
+  --font-sans: "Neue Montreal", "Lato", Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -32,12 +44,13 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Lato", Arial, Helvetica, sans-serif;
+  font-family: "Neue Montreal", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-size: 1.15rem;
   margin: 0;
   padding: 0;
 }
+
 
 /* Títulos */
 .three-d-text {
@@ -45,16 +58,22 @@ body {
     3px 3px 6px rgba(44, 62, 80, 0.18);
 }
 h1,
-h2,
+h2 {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+}
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", Arial, Helvetica, sans-serif;
+  font-family: "Neue Montreal", Arial, Helvetica, sans-serif;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0.5em;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 h1 {
   font-size: 3rem;

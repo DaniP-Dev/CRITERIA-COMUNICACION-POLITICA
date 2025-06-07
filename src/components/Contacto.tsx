@@ -1,124 +1,133 @@
-// components/Contacto.jsx
-"use client";
-
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 const Contacto = () => {
-  const t = useTranslations("ContactPage");
-
-  const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
-  const [enviado, setEnviado] = useState(false);
-  const [error, setError] = useState("");
+  const t = useTranslations("contactForm");
+  const [form, setForm] = useState({
+    name: "",
+    subject: "",
+    email: "",
+    bio: "",
+  });
+  const [showHelper, setShowHelper] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setShowHelper(false);
+    setSuccess(false);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
-    if (!form.nombre || !form.email || !form.mensaje) {
-      setError(t("errorRequired"));
+    if (!form.name || !form.subject || !form.email || !form.bio) {
+      setShowHelper(true);
+      setSuccess(false);
       return;
     }
-    setEnviado(true);
-    setForm({ nombre: "", email: "", mensaje: "" });
-    setTimeout(() => setEnviado(false), 4000);
+    setShowHelper(false);
+    setSuccess(true);
+    // Abrir modal de éxito
+    if (typeof window !== "undefined") {
+      const modal = document.getElementById(
+        "success_modal"
+      ) as HTMLDialogElement;
+      if (modal) modal.showModal();
+    }
+    // Aquí podrías enviar el formulario
   };
 
   return (
-    <motion.section
-      className="flex flex-col items-center justify-center min-h-[60vh] bg-[var(--color-fondo-alt)] p-6"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
+    <section
+      className="flex justify-center items-center h-auto py-3"
+      style={{
+        background:
+          "radial-gradient(circle, rgba(44,62,80,1) 0%, rgba(249,249,251,1) 4%, rgba(44,62,80,1) 100%)",
+      }}
     >
-      <motion.h2
-        className="text-3xl font-bold text-[var(--color-primario)] mb-6"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-      >
-        {t("title")}
-      </motion.h2>
-
-      <motion.form
-        onSubmit={handleSubmit}
-        className="bg-[var(--color-primario)] rounded-lg shadow-lg p-8 w-full max-w-md flex flex-col gap-4"
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.3 }}
-      >
-        <input
-          type="text"
-          name="nombre"
-          placeholder={t("name")}
-          value={form.nombre}
-          onChange={handleChange}
-          className="
-            p-3
-            rounded
-            bg-[var(--color-input-bg)]
-            text-[var(--color-blanco)]
-            border border-gray-700
-            focus:outline-none focus:ring-2 focus:ring-[var(--color-secundario)]
-          "
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder={t("email")}
-          value={form.email}
-          onChange={handleChange}
-          className="
-            p-3
-            rounded
-            bg-[var(--color-input-bg)]
-            text-[var(--color-blanco)]
-            border border-gray-700
-            focus:outline-none focus:ring-2 focus:ring-[var(--color-secundario)]
-          "
-        />
-        <textarea
-          name="mensaje"
-          placeholder={t("message")}
-          value={form.mensaje}
-          onChange={handleChange}
-          rows={5}
-          className="
-            p-3
-            rounded
-            bg-[var(--color-input-bg)]
-            text-[var(--color-blanco)]
-            border border-gray-700
-            focus:outline-none focus:ring-2 focus:ring-[var(--color-secundario)]
-          "
-        />
-
-        {error && <div className="text-red-400 text-sm">{error}</div>}
-
-        <button
-          type="submit"
-          className="px-6 py-3 bg-[var(--color-primario)] text-[var(--color-blanco)] rounded-full font-bold shadow-xs shadow-white hover:bg-[var(--color-secundario)] transition-colors duration-300 text-lg mx-auto block"
+      <div className="card w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl shadow-md bg-base-100 border border-[var(--color-gray)]">
+        <form
+          className="card-body px-0 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-10 items-center text-center w-auto"
+          onSubmit={handleSubmit}
         >
-          {t("send")}
-        </button>
-
-        {enviado && (
-          <motion.div
-            className="text-green-400 text-center mt-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            {t("success")}
-          </motion.div>
-        )}
-      </motion.form>
-    </motion.section>
+          <h2 className="card-title mb-3 text-lg sm:text-xl lg:text-2xl text-[var(--color-base)]">
+            {t("title")}
+          </h2>
+          {showHelper && (
+            <div
+              role="alert"
+              className="alert alert-error mb-6 flex items-center gap-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 shrink-0 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+              <span>{t("helper")}</span>
+            </div>
+          )}
+          <input
+            type="text"
+            name="name"
+            placeholder={t("name")}
+            className="input input-bordered input-lg w-full mb-3"
+            value={form.name}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="subject"
+            placeholder={t("subject")}
+            className="input input-bordered input-lg w-full mb-3"
+            value={form.subject}
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder={t("email")}
+            className="input input-bordered input-lg w-full mb-3"
+            value={form.email}
+            onChange={handleChange}
+          />
+          <textarea
+            name="bio"
+            className="textarea textarea-bordered textarea-lg w-full mb-4 h-40"
+            placeholder={t("bio")}
+            value={form.bio}
+            onChange={handleChange}
+          ></textarea>
+          <div className="card-actions w-full flex flex-col items-center">
+            <button
+              type="submit"
+              className="btn bg-[var(--color-marca)] text-white hover:bg-green-700 transition"
+            >
+              {t("send")}
+            </button>
+          </div>
+        </form>
+      </div>
+      {/* Modal de éxito DaisyUI */}
+      <dialog id="success_modal" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">{t("success")}</h3>
+          <p className="py-4">{t("successDetail")}</p>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>{t("close")}</button>
+        </form>
+      </dialog>
+    </section>
   );
 };
 

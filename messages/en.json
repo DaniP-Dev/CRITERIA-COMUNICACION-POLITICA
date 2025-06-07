@@ -5,8 +5,8 @@
     },
     "HeroSection": {
         "title": "Political Communication",
-        "aboutTitle": "About Criteria Political",
-        "aboutText": "Criteria Political Communication was founded with the mission of providing in-depth analysis of political conversation on digital platforms. Our team combines experience in research, technology, and data intelligence to offer strategic recommendations to campaigns and organizations interested in understanding public opinion."
+        "aboutTitle": "About Criteria",
+        "aboutText": "Criteria Political Communication was founded with the mission of providing in-depth analysis of political conversation on digital platforms. Our team combines expertise in research, technology, and data intelligence to deliver strategic recommendations to campaigns and organizations seeking to understand public opinion."
     },
     "ContactPage": {
         "title": "Contact Us",
@@ -14,12 +14,37 @@
         "email": "Email",
         "message": "Message",
         "send": "Send",
-        "success": "Message sent! We will contact you soon.",
+        "success": "Message sent! We’ll be in touch shortly.",
+        "successShort": "Message sent successfully!",
         "errorRequired": "Please complete all fields."
     },
     "SectionPDF": {
-        "title": "Digital Bulletin",
-        "subtitle": "Download our AI-based report analyzing the digital conversation around the popular consultation. Discover key trends, most used hashtags, and sentiment analysis on social networks.",
+        "title": "Digital Report",
+        "subtitle": "Download our AI-based report analyzing the digital conversation surrounding the popular consultation. Discover key trends, top-used hashtags, and sentiment analysis across social media.",
         "download": "Download"
+    },
+    "about": {
+        "backButton": "Go Back",
+        "title": "Who We Are",
+        "paragraph1": "At Criteria Political Communication, we believe in the importance of understanding the digital conversation surrounding political processes. Our multidisciplinary team blends research, data analysis, and technology to provide strategic advice to campaigns, organizations, and institutions aiming to improve their presence and messaging across social media and digital platforms.",
+        "paragraph2": "Since our launch, we have focused on monitoring trends, hashtags, and key opinions that reflect the pulse of public opinion. With an ethical and rigorous approach, we produce regular reports that help our clients make informed and timely decisions.",
+        "buttonWhatsapp": "Learn More"
+    },
+    "contactForm": {
+        "title": "Contact Us",
+        "name": "Name",
+        "subject": "Subject",
+        "email": "Email",
+        "bio": "Tell us about your inquiry",
+        "send": "Send",
+        "success": "Message sent!",
+        "successDetail": "Thanks for reaching out. We'll get back to you as soon as possible.",
+        "close": "Close",
+        "helper": "Please complete all fields so we can better assist you."
+    },
+    "footer": {
+        "company": "ACME Industries Ltd.",
+        "slogan": "Delivering reliable technology since 1992",
+        "copyright": "Copyright © {year} - All rights reserved"
     }
 }

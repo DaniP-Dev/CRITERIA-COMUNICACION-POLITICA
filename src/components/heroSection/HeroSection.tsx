@@ -44,15 +44,6 @@ const HeroSection = () => {
       {mounted && (
         <section className="fondo-pico text-center py-12 flex flex-col items-center gap-6">
           {/* Divider animado infinitamente */}
-          <motion.div
-            className="divider mb-4"
-            animate={{ rotate: 360 }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
-              ease: "linear",
-            }}
-          />
 
           <motion.img
             src="/imgs/logo.png"
