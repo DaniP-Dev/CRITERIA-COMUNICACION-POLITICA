@@ -1,4 +1,3 @@
-// components/HeroSection.jsx
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -6,67 +5,73 @@ import "./hero.css";
 
 const HeroSection = () => {
   const t = useTranslations("HeroSection");
-  // Parallax solo para los textos de este archivo
-  const { scrollY } = useScroll();
-  const parallaxY = useTransform(scrollY, [0, 300], [0, 100]);
-  const parallaxOpacity = useTransform(parallaxY, [0, 100], [1, 0.5]);
-  const [mounted, setMounted] = React.useState(false);
 
-  React.useEffect(() => setMounted(true), []);
+  // Animación para el bloque superior (video)
+  const refVideo = React.useRef<HTMLDivElement>(null);
+  const { scrollYProgress: scrollYVideo } = useScroll({
+    target: refVideo,
+    offset: ["start start", "end start"],
+  });
+  const opacityVideo = useTransform(scrollYVideo, [0, 0.5], [1, 0]);
+  const yVideo = useTransform(scrollYVideo, [0, 0.5], [0, 100]);
+
+  // Animación para el bloque inferior (hero-img-bg)
+  const refImg = React.useRef<HTMLDivElement>(null);
+  const { scrollYProgress: scrollYImg } = useScroll({
+    target: refImg,
+    offset: ["start start", "end start"],
+  });
+  const opacityImg = useTransform(scrollYImg, [0, 0.5], [1, 0]);
+  const yImg = useTransform(scrollYImg, [0, 0.5], [0, 100]);
 
   return (
-    <>
-      {/* Hero con video de fondo */}
-      <section className="hero-section">
+    <section>
+      {/* Hero superior: video de fondo real controlado por CSS */}
+      <div className="hero-video-bg" ref={refVideo}>
         <video
-          className="hero-bg-video"
           src="/video/video-hero-fondo.mp4"
           autoPlay
           loop
           muted
           playsInline
+          aria-hidden="true"
+          tabIndex={-1}
+          preload="none"
         />
-
-        {/* Contenido centrado sobre el video */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center z-10 pointer-events-none">
-          <motion.h1
-            style={{ y: parallaxY }}
-            className="w-full px-4 mx-auto leading-relaxed max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch] text-3xl md:text-4xl font-extrabold text-white text-center drop-shadow-lg"
-          >
-            <img
-              src="/imgs/banner.png"
-              alt="img"
-              className="w-[80vw] max-w-xs md:w-[50vw] h-auto inline-block align-middle mx-auto mb-4"
-            />
+        <motion.div
+          className="hero-video-content"
+          style={{ opacity: opacityVideo, y: yVideo }}
+        >
+          <img
+            src="/imgs/banner.png"
+            alt="Logo Criteria"
+            loading="lazy"
+            className="hidden lg:block lg:w-2/3 mx-auto"
+          />
+          <h1 className="text-white text-4xl font-bold text-center drop-shadow-lg">
             {t("title")}
-          </motion.h1>
-        </div>
-      </section>
-
-      {/* Segundo bloque con clip-path */}
-      {mounted && (
-        <section className="fondo-pico text-center py-12 flex flex-col items-center gap-6">
-          {/* Divider animado infinitamente */}
-
-          <motion.img
+          </h1>
+        </motion.div>
+      </div>
+      {/* Hero inferior: imagen de fondo con overlay desde CSS */}
+      <motion.div
+        className="hero-img-bg py-6"
+        ref={refImg}
+        style={{ opacity: opacityImg, y: yImg }}
+      >
+        <div className="flex flex-col items-center">
+          <img
             src="/imgs/logo.png"
             alt="Logo Criteria"
-            className="w-24 md:w-32 h-auto mx-auto mb-4"
-            style={{ y: parallaxY, opacity: parallaxOpacity }}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            className="w-20 h-auto"
+            loading="lazy"
           />
-
-          <motion.p
-            className="w-full px-4 mx-auto leading-relaxed max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch] text-lg md:text-xl text-blue-100 text-center"
-            style={{ y: parallaxY, opacity: parallaxOpacity }}
-          >
+          <p className="mt-2 text-center text-white text-lg drop-shadow">
             {t("aboutText")}
-          </motion.p>
-        </section>
-      )}
-    </>
+          </p>
+        </div>
+      </motion.div>
+    </section>
   );
 };
 

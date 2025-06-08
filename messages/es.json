@@ -21,7 +21,8 @@
     "SectionPDF": {
         "title": "Boletín Digital",
         "subtitle": "Descarga nuestro informe basado en inteligencia artificial que analiza la conversación digital alrededor de la consulta popular. Conoce las tendencias clave, hashtags más usados y análisis de sentimiento en redes sociales.",
-        "download": "Descargar"
+        "sideTitle": "Descarga el PDF completo",
+        "sideText": "Puedes visualizar el libro interactivo o descargar el PDF para verlo offline."
     },
     "about": {
         "backButton": "Volver atras",

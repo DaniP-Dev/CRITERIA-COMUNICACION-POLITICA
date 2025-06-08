@@ -11,8 +11,8 @@ export default function Home() {
   const t = useTranslations("HomePage");
   return (
     <>
-      <div className="overflow-hidden">
-        <NaviBar />
+      <NaviBar />
+      <main>
         <section id="heroSection">
           <HeroSection />
         </section>
@@ -25,8 +25,8 @@ export default function Home() {
         <section id="contacto">
           <Contacto />
         </section>
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </>
   );
 }

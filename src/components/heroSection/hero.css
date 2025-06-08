@@ -1,100 +1,62 @@
-/* styles/hero.css */
-
-/* Wrapper de hero: ocupa toda la pantalla en X y adapta en Y */
-.hero-section {
+/* Hero superior: video de fondo accesible y controlado por CSS */
+.hero-video-bg {
   position: relative;
   width: 100%;
-  height: 100vh; /* altura inicial 100% de viewport */
+  height: 100vh; /* Cambiado a ocupar toda la altura de la pantalla */
   overflow: hidden;
-  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-/* Fondo del hero: el video debe cubrir todo */
-.hero-bg-video {
+.hero-video-bg video {
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  pointer-events: none;
+  /* No accesible para tab ni mouse */
 }
-
-/* Overlay oscuro si se desea (opcional) */
-/* .hero-overlay {
+.hero-video-bg::before {
+  content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.3); /* overlay opcional */
   z-index: 1;
-} */
-
-/* Contenido del Hero (texto centrado) */
-.hero-content {
+}
+.hero-video-content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100%;
-  text-align: center;
-  padding: 0 1rem;
 }
 
-.hero-content h1 {
-  color: var(--color-blanco);
-  font-size: 3rem;
-  line-height: 1.1;
-  font-family: "Montserrat", sans-serif;
-  text-shadow:
-    0 4px 12px rgba(44, 62, 80, 0.22),
-    0 1.5px 0 rgba(0,0,0,0.10);
-  font-weight: 800;
-  letter-spacing: -1px;
-}
-
-/* Segundo bloque de texto sobre fondo clip-path (montaña) */
-.fondo-pico {
-  background-color: #040723; /* un azul muy oscuro apenas perceptible */
-  clip-path: polygon(0% 13%, 50% 33%, 100% 15%, 100% 100%, 0% 100%);
-  width: 100%;
-  /* Ajustamos la altura para que se “solape” con el hero principal */
+/* Hero inferior: imagen de fondo con overlay de color */
+.hero-img-bg {
   position: relative;
-  margin-top: -150px; /* Se solapa aproximadamente 1.5 veces su altura sobre el hero */
-  z-index: 15;
-  height: 120vh;
+  width: 100%;
+  min-height: 40vh;
+  background-image: url('/imgs/01.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-top: 200px; /* deja espacio para que el texto no quede “cortado” */
+  justify-content: center;
 }
-
-/* Texto dentro de la sección clip-path */
-.fondo-pico h1,
-.fondo-pico p {
-  color: var(--color-blanco);
-  max-width: 80vw;
-  margin-bottom: 1rem;
-  font-family: "Inter", sans-serif;
+.hero-img-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(4,7,35,0.7); /* color #040723 con opacidad */
+  z-index: 1;
 }
-
-.fondo-pico p {
-  text-shadow:
-    0 2px 8px rgba(44, 62, 80, 0.18),
-    0 1px 0 rgba(0,0,0,0.08);
-  font-weight: 500;
-}
-
-/* Línea/divisor con un borde grueso animado (si fuera necesario) */
-.fondo-pico .divider {
-  width: 80px;
-  height: 3px;
-  background-color: var(--color-secundario);
-  margin-bottom: 2rem;
-}
-
-/* Small-text style si lo necesitas */
-.fondo-pico .Smal {
-  color: #ccc;
-  font-size: 0.9rem;
+.hero-img-bg > div {
+  position: relative;
+  z-index: 2;
 }

@@ -19,9 +19,10 @@
         "errorRequired": "Please complete all fields."
     },
     "SectionPDF": {
-        "title": "Digital Report",
-        "subtitle": "Download our AI-based report analyzing the digital conversation surrounding the popular consultation. Discover key trends, top-used hashtags, and sentiment analysis across social media.",
-        "download": "Download"
+        "title": "Digital Bulletin",
+        "subtitle": "Download our AI-based report that analyzes the digital conversation around the popular consultation. Discover key trends, most used hashtags, and sentiment analysis on social networks.",
+        "sideTitle": "Download the full PDF",
+        "sideText": "You can view the interactive book or download the PDF to read it offline."
     },
     "about": {
         "backButton": "Go Back",
