@@ -28,12 +28,15 @@ const HeroSection = () => {
         />
 
         {/* Contenido centrado sobre el video */}
-        <div className="hero-content flex justify-center items-center">
-          <motion.h1 style={{ y: parallaxY }} className="drop-shadow-2xl flex flex-col items-center">
+        <div className="absolute inset-0 flex flex-col justify-center items-center z-10 pointer-events-none">
+          <motion.h1
+            style={{ y: parallaxY }}
+            className="w-full px-4 mx-auto leading-relaxed max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch] text-3xl md:text-4xl font-extrabold text-white text-center drop-shadow-lg"
+          >
             <img
               src="/imgs/banner.png"
               alt="img"
-              className="w-[50vw] h-auto inline-block align-middle mx-auto"
+              className="w-[80vw] max-w-xs md:w-[50vw] h-auto inline-block align-middle mx-auto mb-4"
             />
             {t("title")}
           </motion.h1>
@@ -56,7 +59,7 @@ const HeroSection = () => {
           />
 
           <motion.p
-            className="max-w-2xl mx-auto text-lg md:text-xl"
+            className="w-full px-4 mx-auto leading-relaxed max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch] text-lg md:text-xl text-blue-100 text-center"
             style={{ y: parallaxY, opacity: parallaxOpacity }}
           >
             {t("aboutText")}

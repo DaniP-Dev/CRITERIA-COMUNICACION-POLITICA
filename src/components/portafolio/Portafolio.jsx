@@ -12,13 +12,13 @@ const Portafolio = () => {
   return (
     <div className="bg-[var(--color-primario)] py-10">
       {/* Título general */}
-      <div className="text-[var(--color-blanco)] text-center px-4">
-        <h1 className="text-3xl md:text-4xl font-bold">Soluciones</h1>
-        <h3 className="pt-4 text-base md:text-lg max-w-2xl mx-auto">
+      <div className="text-[var(--color-blanco)] text-center px-4 w-full mx-auto leading-relaxed max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch]">
+        <h1 className="text-3xl md:text-4xl font-bold drop-shadow-lg">Soluciones</h1>
+        <p className="pt-4 text-base md:text-lg text-blue-100 w-full mx-auto leading-relaxed max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch]">
           Contamos con un grupo de profesionales multidisciplinar integrado por
           perfiles internacionales, con amplia experiencia en cada una de las
           siguientes áreas de actuación
-        </h3>
+        </p>
       </div>
 
       {/* Sección de tarjetas */}

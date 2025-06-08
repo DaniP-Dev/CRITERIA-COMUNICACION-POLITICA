@@ -40,12 +40,15 @@ export const metadata: Metadata = {
   },
   keywords: ["comunicación política", "análisis", "datos", "estrategia"],
   robots: { index: true, follow: true },
-  themeColor: "#ffffff",
-  colorScheme: "light",
   applicationName: "Criteria Comunicación Política",
   icons: {
     icon: "/imgs/logo.png",
   },
+};
+
+export const viewport = {
+  themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default async function LocaleLayout({

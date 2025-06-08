@@ -42,14 +42,14 @@ const page = () => {
         <div
           className="card shadow-md rounded-lg bg-[var(--color-base)] border border-[var(--color-gray)] h-auto"
         >
-          <div className="card-body p-0">
-            <h2 className="text-xl font-bold text-[var(--color-neutral)] text-center pt-4">
+          <div className="card-body p-0 flex flex-col items-center text-center">
+            <h1 className="text-xl font-bold text-[var(--color-neutral)] w-full px-4 mx-auto leading-relaxed max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch] pt-4">
               {t("title")}
-            </h2>
-            <p className="text-[var(--color-neutral)] mt-3 text-justify leading-relaxed text-base sm:text-lg">
+            </h1>
+            <p className="text-[var(--color-neutral)] mt-3 w-full px-4 mx-auto leading-relaxed text-base sm:text-lg max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch]">
               {t("paragraph1")}
             </p>
-            <p className="text-[var(--color-neutral)] mt-2 text-justify leading-relaxed text-base sm:text-lg">
+            <p className="text-[var(--color-neutral)] mt-2 w-full px-4 mx-auto leading-relaxed text-base sm:text-lg max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch]">
               {t("paragraph2")}
             </p>
             <a
@@ -82,13 +82,13 @@ const page = () => {
           className="card shadow-lg rounded-lg bg-[var(--color-base)] border border-[var(--color-gray)] h-auto w-auto"
         >
           <div className="card-body p-8 flex flex-col items-center text-center">
-            <h2 className="text-2xl font-bold text-[var(--color-neutral)]">
+            <h1 className="text-2xl font-bold text-[var(--color-neutral)] w-full px-4 mx-auto leading-relaxed max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch]">
               {t("title")}
-            </h2>
-            <p className="text-[var(--color-neutral)] mt-6 text-justify leading-relaxed text-lg max-w-2xl">
+            </h1>
+            <p className="text-[var(--color-neutral)] mt-6 w-full px-4 mx-auto leading-relaxed text-lg max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch]">
               {t("paragraph1")}
             </p>
-            <p className="text-[var(--color-neutral)] mt-4 text-justify leading-relaxed text-lg max-w-2xl">
+            <p className="text-[var(--color-neutral)] mt-4 w-full px-4 mx-auto leading-relaxed text-lg max-w-[40ch] sm:max-w-[55ch] lg:max-w-[66ch]">
               {t("paragraph2")}
             </p>
             <a

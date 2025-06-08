@@ -10,7 +10,7 @@ function Book() {
   };
   // Página de tapa final
   const tapa = {
-    image: "/pdf/imgs/tapa.jpg", // Cambia la ruta si tu tapa tiene otro nombre
+    image: "/pdf/imgs/portada.jpg", // Cambia la ruta si tu tapa tiene otro nombre
     title: "Tapa final",
   };
   // Generar automáticamente las páginas del 1 al 6
